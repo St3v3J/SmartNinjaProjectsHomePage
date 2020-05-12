@@ -9,7 +9,9 @@ def index():
     some_text = "Message from the handler."
     current_year = datetime.datetime.now().year
 
-    return render_template("index.html", some_text=some_text, current_year=current_year)
+    cities = ["Anaheim", "Los Angeles", "Miami", "Santa Clara", "Las Vegas"]
+
+    return render_template("index.html", some_text=some_text, current_year=current_year, cities=cities)
 
 
 @app.route("/about")
