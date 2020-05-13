@@ -1,6 +1,5 @@
 from flask import Flask, render_template
 import datetime
-
 app = Flask(__name__)
 
 
@@ -10,7 +9,6 @@ def index():
     current_year = datetime.datetime.now().year
 
     cities = ["Anaheim", "Los Angeles", "Miami", "Santa Clara", "Las Vegas"]
-
     return render_template("index.html", some_text=some_text, current_year=current_year, cities=cities)
 
 
