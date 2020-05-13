@@ -1,5 +1,5 @@
 import datetime
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, make_response
 
 
 app = Flask(__name__)
@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    some_text = "Message from the handler."
+    some_text = "This message is from Steve...HEY!."
     current_year = datetime.datetime.now().year
 
     cities = ["Anaheim", "Los Angeles", "Miami", "Santa Clara", "Las Vegas"]
@@ -35,7 +35,10 @@ def contact():
     print(contact_email)
     print(contact_message)
 
-    return render_template("success.html")
+    response = make_response(render_template("success.html"))
+    response.set_cookie("user_name", contact_name)
+
+    return response
 
 
 if __name__ == '__main__':
