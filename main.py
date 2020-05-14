@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    some_text = "This message is from Steve...HEY!."
+    some_text = "These are some of my favorite vacation places!"
     current_year = datetime.datetime.now().year
 
     cities = ["Anaheim", "Los Angeles", "Miami", "Santa Clara", "Las Vegas"]
